@@ -34,6 +34,8 @@ class HomePageSetupsTable
                     ->searchable(),
                 TextColumn::make('Slug3')
                     ->searchable(),
+                TextColumn::make('Route3')
+                    ->searchable(),
                 TextColumn::make('Title4')
                     ->searchable(),
                 TextColumn::make('Route4')

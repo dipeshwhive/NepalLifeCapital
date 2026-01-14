@@ -45,6 +45,8 @@ class HomePageSetupForm
                     ->nullable(),
                 TextInput::make('Slug3')
                     ->default(null),
+                TextInput::make('Route3')
+                    ->default(null),
                 TextInput::make('Title4')
                     ->default(null),
                 RichEditor::make('Description4')

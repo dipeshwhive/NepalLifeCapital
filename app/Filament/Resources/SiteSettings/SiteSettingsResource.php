@@ -19,7 +19,7 @@ class SiteSettingsResource extends Resource
 {
     protected static ?string $model = SiteSettings::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUser;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::ArchiveBox;
 
     protected static ?string $modelLabel = 'Site Settings';
 
