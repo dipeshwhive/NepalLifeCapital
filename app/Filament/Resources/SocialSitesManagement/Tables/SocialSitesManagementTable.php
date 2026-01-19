@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\SocialSitesManagement\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\ToggleColumn;
 
 class SocialSitesManagementTable
 {
@@ -17,9 +17,10 @@ class SocialSitesManagementTable
             ->columns([
                 TextColumn::make('Featured_Link')
                     ->searchable(),
-                IconColumn::make('is_active')
-                ->label('Is active')
-                    ->boolean(),
+                ToggleColumn::make('is_active')
+                    ->label('Is active')
+                    ->onColor('success')
+                    ->offColor('danger'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -9,6 +9,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\ToggleColumn;
 
 class HomePageSetupsTable
 {
@@ -42,8 +43,10 @@ class HomePageSetupsTable
                     ->searchable(),
                 TextColumn::make('Slug4')
                     ->searchable(),
-                IconColumn::make('Is_active')
-                    ->boolean(),
+                ToggleColumn::make(name: 'Is_active')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->label('Active'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

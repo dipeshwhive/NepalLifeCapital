@@ -6,9 +6,9 @@ use Filament\Tables\Table;
 use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\ToggleColumn;
 
 class BoardOfDirectorsTable
 {
@@ -23,9 +23,10 @@ class BoardOfDirectorsTable
                 ImageColumn::make('Featured Image')
                     ->disk('public_direct')
                     ->label('Featured Image'),
-                IconColumn::make('Is Active')
+                ToggleColumn::make('Is Active')
                     ->label('Active')
-                    ->boolean(),
+                    ->onColor('success')
+                    ->offColor('danger'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\OurProcessSetups\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\ToggleColumn;
 
 class OurProcessSetupsTable
 {
@@ -17,8 +17,10 @@ class OurProcessSetupsTable
             ->columns([
                 TextColumn::make('Title')
                     ->searchable(),
-                IconColumn::make('IsActive')
-                    ->boolean(),
+                ToggleColumn::make(name: 'IsActive')
+                    ->label('Active')
+                    ->onColor('success')
+                    ->offColor('danger'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

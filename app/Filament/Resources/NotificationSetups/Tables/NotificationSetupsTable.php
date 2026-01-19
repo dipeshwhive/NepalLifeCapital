@@ -6,9 +6,9 @@ use Filament\Tables\Table;
 use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\ToggleColumn;
 
 class NotificationSetupsTable
 {
@@ -19,8 +19,10 @@ class NotificationSetupsTable
                 ImageColumn::make('FeaturedImage')
                     ->disk('public_direct')
                     ->searchable(),
-                IconColumn::make('IsActive')
-                    ->boolean(),
+                ToggleColumn::make('IsActive')
+                    ->label('Active')
+                    ->onColor('success')
+                    ->offColor('danger'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -6,8 +6,8 @@ use Filament\Tables\Table;
 use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 
 class UsersTable
 {
@@ -20,10 +20,10 @@ class UsersTable
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
-                IconColumn::make('is_active')
+                ToggleColumn::make('is_active')
                     ->label('Active')
-                    ->boolean() // shows a checkmark if true, cross if false
-                    ->sortable(),
+                    ->onColor('Success') // shows a checkmark if true, cross if false
+                    ->offColor('danger'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
