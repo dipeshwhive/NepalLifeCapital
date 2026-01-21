@@ -2,18 +2,19 @@
 
 namespace App\Filament\Resources\FormCategories;
 
-use App\Filament\Resources\FormCategories\Pages\CreateFormCategory;
+use UnitEnum;
+use BackedEnum;
+use Filament\Tables\Table;
+use App\Models\FormCategory;
+use Filament\Schemas\Schema;
+use Filament\Resources\Resource;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\FormCategories\Pages\EditFormCategory;
+use App\Filament\Resources\FormCategories\Pages\CreateFormCategory;
 use App\Filament\Resources\FormCategories\Pages\ListFormCategories;
 use App\Filament\Resources\FormCategories\Schemas\FormCategoryForm;
 use App\Filament\Resources\FormCategories\Tables\FormCategoriesTable;
-use App\Models\FormCategory;
-use BackedEnum;
-use UnitEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
+use App\Filament\Resources\FormCategories\RelationManagers\ListRelationManager;
 
 class FormCategoryResource extends Resource
 {
@@ -43,7 +44,7 @@ class FormCategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ListRelationManager::class,
         ];
     }
 

@@ -17,6 +17,7 @@ use Filament\Tables\Table;
 
 class FAQSetupResource extends Resource
 {
+    public static bool $shouldRegisterNavigation = false;
     protected static ?string $model = FAQSetup::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::PuzzlePiece;

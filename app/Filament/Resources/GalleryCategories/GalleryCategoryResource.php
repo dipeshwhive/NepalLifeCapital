@@ -2,18 +2,19 @@
 
 namespace App\Filament\Resources\GalleryCategories;
 
-use App\Filament\Resources\GalleryCategories\Pages\CreateGalleryCategory;
+use UnitEnum;
+use BackedEnum;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use App\Models\GalleryCategory;
+use Filament\Resources\Resource;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\GalleryCategories\Pages\EditGalleryCategory;
+use App\Filament\Resources\GalleryCategories\Pages\CreateGalleryCategory;
 use App\Filament\Resources\GalleryCategories\Pages\ListGalleryCategories;
 use App\Filament\Resources\GalleryCategories\Schemas\GalleryCategoryForm;
 use App\Filament\Resources\GalleryCategories\Tables\GalleryCategoriesTable;
-use App\Models\GalleryCategory;
-use BackedEnum;
-use UnitEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
+use App\Filament\Resources\GalleryCategories\RelationManagers\GalleriesRelationManager;
 
 class GalleryCategoryResource extends Resource
 {
@@ -43,7 +44,7 @@ class GalleryCategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            GalleriesRelationManager::class,
         ];
     }
 

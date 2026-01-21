@@ -2,18 +2,19 @@
 
 namespace App\Filament\Resources\FAQCategorySetups;
 
-use App\Filament\Resources\FAQCategorySetups\Pages\CreateFAQCategorySetup;
+use UnitEnum;
+use BackedEnum;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use App\Models\FAQCategorySetup;
+use Filament\Resources\Resource;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\FAQCategorySetups\Pages\EditFAQCategorySetup;
 use App\Filament\Resources\FAQCategorySetups\Pages\ListFAQCategorySetups;
+use App\Filament\Resources\FAQCategorySetups\Pages\CreateFAQCategorySetup;
 use App\Filament\Resources\FAQCategorySetups\Schemas\FAQCategorySetupForm;
 use App\Filament\Resources\FAQCategorySetups\Tables\FAQCategorySetupsTable;
-use App\Models\FAQCategorySetup;
-use BackedEnum;
-use UnitEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
+use App\Filament\Resources\FAQCategorySetups\RelationManagers\FaqsRelationManager;
 
 class FAQCategorySetupResource extends Resource
 {
@@ -43,7 +44,7 @@ class FAQCategorySetupResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            FaqsRelationManager::class,
         ];
     }
 

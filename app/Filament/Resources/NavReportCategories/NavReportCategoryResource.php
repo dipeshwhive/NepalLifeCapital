@@ -2,18 +2,19 @@
 
 namespace App\Filament\Resources\NavReportCategories;
 
-use App\Filament\Resources\NavReportCategories\Pages\CreateNavReportCategory;
+use UnitEnum;
+use BackedEnum;
+use Filament\Tables\Table;
+use Filament\Schemas\Schema;
+use Filament\Resources\Resource;
+use App\Models\NavReportCategory;
+use Filament\Support\Icons\Heroicon;
 use App\Filament\Resources\NavReportCategories\Pages\EditNavReportCategory;
+use App\Filament\Resources\NavReportCategories\Pages\CreateNavReportCategory;
 use App\Filament\Resources\NavReportCategories\Pages\ListNavReportCategories;
 use App\Filament\Resources\NavReportCategories\Schemas\NavReportCategoryForm;
 use App\Filament\Resources\NavReportCategories\Tables\NavReportCategoriesTable;
-use App\Models\NavReportCategory;
-use BackedEnum;
-use UnitEnum;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Table;
+use App\Filament\Resources\NavReportCategories\RelationManagers\ReportsRelationManager;
 
 class NavReportCategoryResource extends Resource
 {
@@ -43,7 +44,7 @@ class NavReportCategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ReportsRelationManager::class,
         ];
     }
 

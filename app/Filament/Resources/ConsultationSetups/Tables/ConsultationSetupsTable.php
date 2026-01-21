@@ -17,8 +17,6 @@ class ConsultationSetupsTable
             ->columns([
                 TextColumn::make('Title')
                     ->searchable(),
-                TextColumn::make('FeaturedImage')
-                    ->searchable(),
                 ToggleColumn::make('IsActive')
                     ->label('Active')
                     ->onColor('success')

@@ -17,6 +17,7 @@ use Filament\Tables\Table;
 
 class NavReportResource extends Resource
 {
+    public static bool $shouldRegisterNavigation = false;
     protected static ?string $model = NavReport::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChartBar;

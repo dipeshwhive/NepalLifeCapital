@@ -17,6 +17,7 @@ use Filament\Tables\Table;
 
 class GallerySetupResource extends Resource
 {
+    // public static bool $shouldRegisterNavigation = false;
     protected static ?string $model = GallerySetup::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Photo;
