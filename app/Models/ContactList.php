@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ContactList extends Model
 {
-    protected $table="contact_lists";
+    protected $table="contact";
     protected $fillable = [
-        'Name',
-        'Email',
-        'PhoneNumber',
-        'Message',
+        'name',
+        'email',
+        'phone_number',
+        'message',
     ];
 }

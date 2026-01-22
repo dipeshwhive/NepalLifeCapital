@@ -14,11 +14,11 @@ class ContactListsTable
     {
         return $table
             ->columns([
-                TextColumn::make('Name')
+                TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('Email')
+                TextColumn::make('email')
                     ->searchable(),
-                TextColumn::make('PhoneNumber')
+                TextColumn::make('phone_number')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -37,7 +37,7 @@ class ContactListsTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    //DeleteBulkAction::make(),
                 ]),
             ]);
     }

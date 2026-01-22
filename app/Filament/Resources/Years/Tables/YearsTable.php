@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\YearSetups\Tables;
+namespace App\Filament\Resources\Years\Tables;
 
 use Filament\Tables\Table;
 use Filament\Actions\EditAction;
@@ -9,26 +9,17 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 
-class YearSetupsTable
+class YearsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('Year')
-                    ->searchable(),
-                ToggleColumn::make('IsActive')
-                    ->label('Active')
+                TextColumn::make('year')
+                    ->sortable(),
+                ToggleColumn::make('is_active')
                     ->onColor('success')
-                    ->offColor('secondary'),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->offColor('danger'),
             ])
             ->filters([
                 //
