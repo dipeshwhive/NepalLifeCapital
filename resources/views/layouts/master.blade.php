@@ -8,7 +8,7 @@
     <meta content name="keywords" />
     <meta content name="description" />
     <!-- Favicon -->
-    <link href="{{ getImage('site', siteSetting()->Favicon) }}" rel="icon" />
+    <link href="{{ getImage(siteSetting()->Favicon) }}" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

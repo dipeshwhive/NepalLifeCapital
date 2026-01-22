@@ -7,7 +7,6 @@ use App\Models\MutualFundReportsSetup;
 use App\Models\NavReportCategory;
 use App\Models\NoticeSetup;
 use App\Models\ProspectusSetup;
-use Illuminate\Support\Facades\DB;
 
 class PublicationController extends Controller
 {

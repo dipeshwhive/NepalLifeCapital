@@ -126,8 +126,10 @@
                      <div class="col-md-8 col-auto">
                          <div class="mt-4">
                              <h3 class="text-white mb-3">{{ consultation()->Title }}</h3>
-                             <p class="text-white font">{!! consultation()->Description !!}
-                             </p>
+                                <div class="text-white font">
+                                    {!! consultation()->Description !!}
+                                </div>
+
                              <form class="row mt-4 mb-4" id="consultationInquiry" method="post">
                                  @csrf
                                  <div class="col-md-6 mb-2">
@@ -150,7 +152,7 @@
                      <div class="col-md-4 mt-3 col-auto">
                          <div class="img-fluid justify-content-center d-flex">
                              <img title="Consultation"
-                                 src="{{ getImage('images', consultation()->FeaturedImage) }}"
+                                 src="{{ getImage(consultation()->FeaturedImage) }}"
                                  alt="Consultation" class=" img-fluid w-100">
                          </div>
                      </div>
@@ -162,7 +164,7 @@
          <div class="container py-4">
              <div class="row justify-content-center mb-2">
                  <img title="{{ siteSetting()->SiteName }}" class="img-fluid w-50"
-                     src="{{ siteSetting()->SiteLogo }}" alt="{{ siteSetting()->SiteName }}" />
+                     src="{{ asset('assets/img/logo/logo.png') }}" alt="{{ siteSetting()->SiteName }}" />
              </div>
              <p
                  class="col-7 d-flex justify-content-center text-center align-content-center m-auto font text-white mb-2">
@@ -304,7 +306,7 @@
                                  <div class="d-inline-flex align-items-center justify-content-center">
                                      @foreach (socialSites() as $site)
                                          <a title="" class href="{{ $site->FeaturedLink }}"
-                                             target="_blank"><img src="{{ getImage('images', $site->FeaturedImage) }}"
+                                             target="_blank"><img src="{{ getImage($site->FeaturedImage) }}"
                                                  alt class-="img-fluid" width="50%" /></a>
                                      @endforeach
                                  </div>

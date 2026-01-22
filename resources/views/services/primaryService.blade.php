@@ -2,7 +2,7 @@
 @section('content')
     <main>
 
-        <section class="container-fluid col-md-9 col-12 text-white d-lg-block mt-5">
+        <section class="container-fluid col-md-9 col-12 d-lg-block mt-5">
             <p class="fs-2 text-black-50 mb-0">Unlock Your Investment Potential with Our</p>
         <h1 class="fs-2 txt-color">{{ $service->Title }}</h1>
             <div class="row">
@@ -11,7 +11,7 @@
                 </div>
                 @if (!empty($service->FeaturedImage) || (empty($service->SubTitle1) && empty($service->SubTitle2)))
                     <div class="col-md-4 col-auto justify-content-end align-content-end ">
-                        <img src="{{ getImage('services', $service->FeaturedImage) }}" width="100%" class="img-fluid me-5">
+                        <img src="{{ getImage($service->FeaturedImage) }}" width="100%" class="img-fluid me-5">
                     </div>
                 @endif
             </div>
@@ -85,7 +85,7 @@
                                                     <div class="col-md-4 col-auto">
                                                         <div class="img-fluid">
                                                             <img title="Product Image"
-                                                                src="{{ getImage('products', $product->FeaturedImage) }}"
+                                                                src="{{ getImage($product->FeaturedImage) }}"
                                                                 alt="Product Image" class="w-75">
                                                         </div>
                                                     </div>

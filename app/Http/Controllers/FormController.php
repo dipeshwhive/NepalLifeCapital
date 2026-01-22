@@ -26,7 +26,7 @@ class FormController extends Controller
                 'id' => $form->id,
                 'title' => $form->title,
                 'file' => $form->file,
-                'image' => getImage('files', $form->file)
+                'image' => getImage($form->file)
             ];
         });
 

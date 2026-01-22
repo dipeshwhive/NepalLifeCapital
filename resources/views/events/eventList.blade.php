@@ -27,7 +27,7 @@
                         <div class="card border-0">
                             <a title="Event" href="{{ route('eventDetail', $event->Slug) }}">
                                 <img title="Event Image" class="card-img-top"
-                                    src="{{ getImage('events', $event->FeaturedImage) }}" alt="Event Image">
+                                    src="{{ getImage($event->FeaturedImage) }}" alt="Event Image">
                             </a>
                             <div class="card-body">
                                 <a title="Event" href="{{ route('eventDetail', $event->Slug) }}">

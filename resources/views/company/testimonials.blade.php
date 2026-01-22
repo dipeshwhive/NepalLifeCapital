@@ -81,11 +81,11 @@
 
                                 @foreach ($testimonials as $testimonial)
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }} ">
-                                        <p class="font mt-2" style="color: #565F64;">{!! $testimonial->message !!}
+                                        <p class="font mt-2" style="color: #565F64;">{!! $testimonial->Message !!}
                                         </p>
-                                        <p class="font mb-0" style="color: #565F64;">{{ $testimonial->name }}
+                                        <p class="font mb-0" style="color: #565F64;">{{ $testimonial->Name }}
                                         </p>
-                                        <p class="font" style="color: #565F64;">{{ $testimonial->designation }}
+                                        <p class="font" style="color: #565F64;">{{ $testimonial->Designation }}
                                         </p>
                                     </div>
                                 @endforeach

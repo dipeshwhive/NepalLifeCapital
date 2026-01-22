@@ -2,7 +2,7 @@
 @section('content')
     <main>
 
-        <section class="container-fluid col-md-9 col-auto text-white mt-5">
+        <section class="container-fluid col-md-9 col-auto mt-5">
             <p class="text-black-50 fs-2 fw-bold">Unlock the Power of Digital Securities with Our</p>
             <h1 class="txt-color fs-2">Depository Participant Services</h1>
             <div class="row">

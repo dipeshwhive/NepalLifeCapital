@@ -66,7 +66,7 @@
                                         @forelse($prospectuses as $prospectus)
                                         <div class="col-12">
                                             <!-- Prospectus Item 1 -->
-                                            <a href="{{ getImage('prospectus',$prospectus->PdfFile) }}"
+                                            <a href="{{ getImage($prospectus->PdfFile) }}"
                                                 target="_blank" rel="noopener noreferrer" class="text-decoration-none">
                                                 <div class="card mb-3 border-1 shadow-sm prospectus-card">
                                                     <div class="card-body">
@@ -74,8 +74,8 @@
                                                             <div class="col-md-3 col-12 text-md-center mb-2 mb-md-0">
                                                                 <p class="text-black-50 font mb-0">
                                                                     @php
-                                                                        $prospectusDate = $prospectus->created_at
-                                                                            ? \Carbon\Carbon::parse($prospectus->created_at)->format('F j, Y')
+                                                                        $prospectusDate = $prospectus->CreatedAt
+                                                                            ? \Carbon\Carbon::parse($prospectus->CreatedAt)->format('F j, Y')
                                                                             : null;
                                                                     @endphp
                                                                     <i class="bi bi-calendar3 me-2"></i>{{ $prospectusDate ?? 'Date unavailable' }}
@@ -111,7 +111,7 @@
         </section>
 
         <section class="container-fluid position-relative mt-3 py-5 m-0 p-0 py-0">
-            <img title="Notice Image" src="{{ getImage('site', siteSetting()->HomeFeaturedImage) }}" width="100%"
+            <img title="Notice Image" src="{{ getImage(siteSetting()->HomeFeaturedImage) }}" width="100%"
                 alt="Notice Image" class="img-fluid mt-5">
             <div class="overlay mt-4 position-absolute text-center">
                 <h3 class="fs-5 text-white">{{ siteSetting()->HomeTitle }}</h3>

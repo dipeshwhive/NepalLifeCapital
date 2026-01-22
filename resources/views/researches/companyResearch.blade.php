@@ -21,9 +21,9 @@
                             <div class="">
                                 <h2><i class="bi bi-filter-square text-black-50"></i></h2>
                             </div>
-                            <a title="{{ $research->title }}" href="{{ getImage('companyResearch', $research->file) }}"
+                            <a title="{{ $research->Title }}" href="{{ getImage($research->File) }}"
                                 target="_blank" class="font txt-color mb-0 mt-2">
-                                {{ $research->title }}
+                                {{ $research->Title }}
                             </a>
                         </div>
                     </div>

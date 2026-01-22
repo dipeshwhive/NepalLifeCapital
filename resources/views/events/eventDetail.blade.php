@@ -25,7 +25,7 @@
                         <p class="font mb-3 text-justify">{!! $detail->Description !!}</p>
                     </div>
                     <div class="col-md-6 col-12">
-                        <img title="{{ $detail->Title }}" src="{{ getImage('events', $detail->FeaturedImage) }}"
+                        <img title="{{ $detail->Title }}" src="{{ getImage($detail->FeaturedImage) }}"
                             alt="{{ $detail->Title }}" class="card-img">
                     </div>
                 </div>

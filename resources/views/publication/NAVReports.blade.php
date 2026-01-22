@@ -1,4 +1,9 @@
 @extends('layouts.master')
+
+@php
+use App\Models\NavReport;
+@endphp
+
 @section('content')
     <main>
         <section class="container-fluid text-white py-2 px-5 d-lg-block" style="background-color: #00549A;">
@@ -24,7 +29,7 @@
                         <table class="table table-bordered  table-hover font" style="border-radius: 5px;"
                             id="navTable{{ $category->id }}">
                             <p class="font mb-1">
-                                {{ $category->title }}
+                                {{ $category->Title }}
                             </p>
                             <thead class="table-active">
                                 <tr>
@@ -33,16 +38,15 @@
                                 </tr>
                             </thead>
                             @php
-                                $navReports = DB::table('nav_report')
-                                    ->where('category_id', $category->id)
-                                    ->where('is_active', 1)
+                                $navReports = NavReport::where('CategoryId', $category->id)
+                                    ->where('IsActive', 1)
                                     ->get();
                             @endphp
                             <tbody class="font text-black-50">
                                 @foreach ($navReports as $report)
                                     <tr>
-                                        <th scope="row">{{ $report->transaction_amount }}</th>
-                                        <td>{{ $report->commission }}</td>
+                                        <th scope="row">{{ $report->TransactionAmount }}</th>
+                                        <td>{{ $report->Commission }}</td>
 
                                     </tr>
                                 @endforeach

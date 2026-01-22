@@ -20,7 +20,7 @@
                 <div class="container p-3">
                     <div class="row">
                         <div class="col-md-4 col-12">
-                            <img title="{{ $message->Title }}" src="{{ getImage('team', $message->FeaturedImage) }}"
+                            <img title="{{ $message->Title }}" src="{{ getImage($message->FeaturedImage) }}"
                                 alt="{{ $message->Title }}" class="card-img">
                         </div>
                         <div class="col-md-8 col-auto mt-3">

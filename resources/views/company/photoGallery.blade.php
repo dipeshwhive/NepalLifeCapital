@@ -1,4 +1,8 @@
 @extends('layouts.master')
+@php
+    use App\Models\GallerySetup;
+@endphp
+
 @section('content')
     <style>
         .menu {
@@ -63,22 +67,22 @@
                         <div class="menu">
                             @foreach ($photoCategory as $category)
                                 <button class="menu-item {{ $loop->first ? 'active' : '' }}"
-                                    onclick="showSection('{{ $category->id }}', this)">{{ $category->title }}</button>
+                                    onclick="showSection('{{ $category->id }}', this)">{{ $category->Title }}</button>
                             @endforeach
                         </div>
 
                         @foreach ($photoCategory as $item)
                             @php
-                                $photos = DB::table('gallery')
-                                    ->where('category_id', $item->id)
-                                    ->where('is_active', 1)
+
+                                $photos = GallerySetup::where('category_id', $item->id)
+                                    ->where('IsActive', 1)
                                     ->get();
                             @endphp
                             <div id="{{ $item->id }}" class="content-section">
                                 <div class="row justify-content-center">
                                     @foreach ($photos as $photo)
                                         <div class="col-md-4 col-auto mb-2">
-                                            <img src="{{ getImage('gallery', $photo->FeaturedImage) }}" class="w-100"
+                                            <img src="{{ getImage($photo->FeaturedImage) }}" class="w-100"
                                                 alt="gallery image">
                                         </div>
                                     @endforeach

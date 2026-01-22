@@ -20,7 +20,6 @@ use App\Models\NotificationSetup;
 use App\Models\PortfolioProductsSetup;
 use App\Models\SliderSetup;
 use App\Models\TestimonialManagement;
-use League\Uri\Components\Port;
 
 class HomeController extends Controller
 {
@@ -64,11 +63,11 @@ class HomeController extends Controller
         $testimonials = TestimonialManagement::where('IsActive', 1)
             ->get();
 
-        // $newsletters = Newsletter::where('is_active', 1)
-        //     // ->where('show_in_home', 1)
-        //     ->orderBy('id', 'desc')
-        //     ->take(8)
-        //     ->get();
+        $newsletters = Newsletter::where('is_active', 1)
+            // ->where('show_in_home', 1)
+            ->orderBy('id', 'desc')
+            ->take(8)
+            ->get();
 
         $firstGalleryImage = GallerySetup::where('IsActive', 1)
             ->orderBy('id', 'desc')
@@ -101,7 +100,7 @@ class HomeController extends Controller
             'home3',
             'home4',
             'testimonials',
-            
+            'newsletters',
             'faqs',
             'consultation',
             'firstGalleryImage',

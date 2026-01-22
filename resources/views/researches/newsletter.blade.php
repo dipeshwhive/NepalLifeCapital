@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@php
+    use App\Models\Newsletter;
+@endphp
 @section('content')
     <main>
         <section class="container-fluid text-white py-2 px-5 d-lg-block" style="background-color: #00549A;">
@@ -52,20 +55,22 @@
                                             <div class="row">
                                                 <div class="col-md-11 px-3">
                                                     @php
-                                                        $months = DB::table('newsletter')
-                                                            ->where('year_id', $year->id)
-                                                            ->where('is_active', 1)
-                                                            ->groupBy('month')
-                                                            ->orderBy('id', 'desc')
-                                                            ->get();
+                                                        $months = Newsletter::where('year_id', $year->id)
+    ->where('is_active', 1)
+    ->selectRaw('MAX(id) as id')
+    ->groupBy('month')
+    ->orderByDesc('id')
+    ->pluck('id');
+
+$months = Newsletter::whereIn('id', $months)->get();
+
                                                     @endphp
                                                     <div class="newsContent{{ $year->id }} " style="display: none;">
                                                         @foreach ($months as $month)
                                                             <p class="font-md bold px-3 text-dark" style="">
                                                                 {{ $month->month }}</p>
                                                             @php
-                                                                $data = DB::table('newsletter')
-                                                                    ->where('month', $month->month)
+                                                                $data = Newsletter::where('month', $month->month)
                                                                     ->where('year_id', $month->year_id)
                                                                     ->where('is_active', 1)
                                                                     ->get();
@@ -73,7 +78,7 @@
                                                             @foreach ($data as $info)
                                                                 <ul style="list-style: none" class="mt-2">
                                                                     <a title="{{ $info->title }}"
-                                                                        href="{{ getImage('newsletter', $info->file) }}"
+                                                                        href="{{ getNewsletter('assets/pdf/',$info->file) }}"
                                                                         target="_blank"
                                                                         class="news_link font-md">{{ $info->title }}</a>
                                                                 </ul>

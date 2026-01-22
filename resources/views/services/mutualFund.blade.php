@@ -4,7 +4,7 @@
 @section('content')
     <main>
 
-        <section class="container-fluid col-md-9 col-12 text-white d-lg-block mt-5">
+        <section class="container-fluid col-md-9 col-12 d-lg-block mt-5">
             {{-- <h5 class="text-black-50">Unlock Your Investment Potential with Our</h5> --}}
             <h1 class="txt-color fs-2">Mutual Fund Number First [1]</h1>
             <div class="row">

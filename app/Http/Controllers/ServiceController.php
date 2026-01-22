@@ -14,8 +14,8 @@ class ServiceController extends Controller
         ->where('IsActive',1)
         ->first();
 
-        $portfolioProducts = PortfolioProductsSetup::where('is_active',1)
-        ->where('ShowInHomePage',1)
+        $portfolioProducts = PortfolioProductsSetup::where('IsActive',1)
+        ->where('ShowHome',1)
         ->get();
 
 

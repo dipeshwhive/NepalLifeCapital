@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CompanyResearchSetup;
+use App\Models\Years;
+use App\Models\Newsletter;
 use Illuminate\Support\Facades\DB;
+use App\Models\CompanyResearchSetup;
 
 
 class ResearchController extends Controller
@@ -20,13 +22,11 @@ class ResearchController extends Controller
 
     public function newsletter()
     {
-        $years = DB::table('years_setup')
-            ->where('is_active', 1)
+        $years = Years::where('is_active', 1)
             ->orderBy('id', 'desc')
             ->get();
 
-        $newsletters = DB::table('newsletter')
-            ->where('is_active', 1)
+        $newsletters = Newsletter::where('is_active', 1)
             ->get();
 
         return view('researches.newsletter', compact('years', 'newsletters'));

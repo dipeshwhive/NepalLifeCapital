@@ -22,7 +22,7 @@
                     <div class="col-md-3 col-12 mb-3">
                         <div class="card border-primary front">
                             <img title="{{ $director->Name }}" class="card-img-top"
-                                src="{{ getImage('team', $director->{'Featured Image'}) }}" alt="{{ $director->Name }}">
+                                src="{{ getImage($director->{'Featured Image'}) }}" alt="{{ $director->Name }}">
                             <div class="card-body">
                                 <p class="text-center txt-color font mb-0">{{ $director->Name }}
                                 </p>
@@ -35,7 +35,7 @@
         </section>
 
         <section class="container-fluid position-relative mt-3 py-5 m-0 p-0 py-0">
-            <img title="{{ siteSetting()->HomeTitle }}" src="{{ getImage('site', siteSetting()->HomeFeaturedImage) }}"
+            <img title="{{ siteSetting()->HomeTitle }}" src="{{ getImage(siteSetting()->HomeFeaturedImage) }}"
                 width="100%" alt="{{ siteSetting()->HomeTitle }}" class="img-fluid mt-5">
             <div class="overlay mt-4 position-absolute text-center">
                 <h2 class="fs-4 text-white">{{ siteSetting()->HomeTitle }}</h2>

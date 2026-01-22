@@ -19,7 +19,7 @@
 
         <section class="container col-md-9 col-12 mt-5">
                 <div class="card border-white mt-1 mb-3">
-                <img title="Company Image" src="{{ getImage('about', $aboutUs->FeaturedImage) }}" alt="company image">
+                <img title="Company Image" src="{{ getImage($aboutUs->FeaturedImage) }}" alt="company image">
             </div>
         </section>
 
@@ -48,7 +48,7 @@
                             <h2 class="card-title txt-color font-lg">Our
                                 Mission
                             </h2>
-                            <p class="card-text text-black-50 font mt-2">{!! $aboutUs->mission !!}</p>
+                            <p class="card-text text-black-50 font mt-2">{!! $aboutUs->Mission !!}</p>
 
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                                 Vision
                             </h2>
 
-                            <p class="card-text text-black-50 font mt-2">{!! $aboutUs->vision !!}
+                            <p class="card-text text-black-50 font mt-2">{!! $aboutUs->Vision !!}
                             </p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
 
         <!-- Another Section -->
         <section class="container-fluid position-relative mt-3 py-5 m-0 p-0 py-0">
-            <img title="{{ siteSetting()->HomeTitle }}" src="{{ getImage('site', siteSetting()->HomeFeaturedImage) }}"
+            <img title="{{ siteSetting()->HomeTitle }}" src="{{ getImage(siteSetting()->HomeFeaturedImage) }}"
                 width="100%" alt="{{ siteSetting()->HomeTitle }}" class="img-fluid mt-5">
             <div class="overlay mt-4 position-absolute text-center">
                 <h3 class="fs-5 text-white">{{ siteSetting()->HomeTitle }}</h3>
@@ -113,14 +113,13 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h3 class="mt-4 fs-5 text-light">{{ $home1->title1 }}</h3>
-                                            <div class="text-white font-sm pb-2">
-
-                                                {!! $home1->description1 !!}
+                                            <h3 class="mt-4 fs-5 text-light">{{ $home1->Title1 }}</h3>
+                                            <div class="text-white font pb-2">
+                                                {!! $home1->Description1 !!}
                                             </div>
 
                                             <div>
-                                                <a href="{{ siteSetting()->nav_button_link3 }}" target="_blank">
+                                                <a href="{{ siteSetting()->NavButtonLink3 }}" target="_blank">
                                                     <button class="button-md mb-2">
                                                         Get your Demat account today<span class="circle-md"><span
                                                                 class="arrow-md"></span></span>
@@ -138,9 +137,9 @@
                                     <div class="row">
 
                                         <div class="col">
-                                            <h3 class="mt-3 fs-5 text-danger">{{ $home3->title3 }}</h3>
+                                            <h3 class="mt-3 fs-5 text-danger">{{ $home3->Title3 }}</h3>
                                             <div>
-                                                <p class="font-sm text-danger">{!! $home3->description3 !!}</p>
+                                                <p class="font text-danger">{!! $home3->Description3 !!}</p>
                                             </div>
                                             <div>
                                                 <a title="Learn More" href="{{ route('contact') }}">
@@ -169,10 +168,10 @@
                                 <div class="">
                                     <h3 class="font-md mb-1" style="color: #064D86;">{{ $loop->iteration }}
                                     </h3>
-                                    <h3 class="font m-0" style="color: #000;">{{ $feature->title }}
+                                    <h3 class="font m-0" style="color: #000;">{{ $feature->Title }}
                                     </h3>
                                     <hr class="my-1">
-                                    <p class="card-text text-black-50 font-sm mb-3">{!! $feature->description !!}
+                                    <p class="card-text text-black-50 font-sm mb-3">{!! $feature->Description !!}
                                     </p>
                                 </div>
                             @endforeach

@@ -19,11 +19,11 @@
             <div class="container p-3">
                 {{-- <p class="d-flex mb-0 justify-content-start align-content-center font"></p> --}}
                 <h2 class="d-flex justify-content-center fs-4 txt-color align-content-center mb-3 text center">
-                    {{ $termsAndCondition->title }}
+                    {{ $termsAndCondition->Title }}
 
                 </h2>
                 <p class="font-sm text-black-50">
-                    {!! $termsAndCondition->description !!}
+                    {!! $termsAndCondition->Description !!}
                 </p>
 
             </div>

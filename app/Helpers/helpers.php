@@ -16,11 +16,17 @@ function siteSetting()
     return SiteSettings::first();
 }
 
-function getImage($folder, $file)
+function getImage($filePath)
 {
 
-    return asset("assets/{$folder}/{$file}");
+    return asset($filePath);
 }
+
+function getNewsletter($folder,$filePath)
+{
+    return asset("{$folder}" . ltrim($filePath, '/'));
+}
+
 
 function socialSites()
 {

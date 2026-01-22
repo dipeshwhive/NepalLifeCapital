@@ -39,7 +39,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4 col-5">
-                                        <img title="{{ $team->Name }}" src="{{ getImage('team', $team->FeaturedImage) }}"
+                                        <img title="{{ $team->Name }}" src="{{ getImage($team->FeaturedImage) }}"
                                             class="card-img" alt="{{ $team->Name }}"
                                             style="height:180px;object-fit:cover">
                                     </div>

@@ -89,7 +89,7 @@
                                                     <div class="newsContent{{ $notice->id }}" style="display: none;">
                                                         <div class="mb-3 d-flex justify-content-center">
                                                             <img title="Notice Image"
-                                                                src="{{ getImage('notices', $notice->FeaturedImage) }}"
+                                                                src="{{ getImage($notice->FeaturedImage) }}"
                                                                 alt="Notice Image" class="card-img w-50">
                                                         </div>
 
@@ -111,7 +111,7 @@
         </section>
 
         <section class="container-fluid position-relative mt-3 py-5 m-0 p-0 py-0">
-            <img title="Notice Image" src="{{ getImage('site', siteSetting()->HomeFeaturedImage) }}" width="100%"
+            <img title="Notice Image" src="{{ getImage(siteSetting()->HomeFeaturedImage) }}" width="100%"
                 alt="Notice Image" class="img-fluid mt-5">
             <div class="overlay mt-4 position-absolute text-center">
                 <h3 class="fs-5 text-white">{{ siteSetting()->HomeTitle }}</h3>

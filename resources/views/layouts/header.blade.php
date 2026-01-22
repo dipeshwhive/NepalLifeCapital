@@ -16,7 +16,7 @@
                 <div class="h-100 d-inline-flex align-items-center small">
                     @foreach (socialSites() as $site)
                         <a title="Social Site" class href="{{ $site->FeaturedLink }}" target="_blank"><img
-                                title="Social Site" src="{{ getImage('images', $site->FeaturedImage) }}"
+                                title="Social Site" src="{{ getImage($site->FeaturedImage) }}"
                                 alt="Social Site" class-="img-fluid" width="50%" /></a>
                     @endforeach
                 </div>
@@ -30,19 +30,19 @@
                 <a title="{{ siteSetting()->SiteName }}" href="{{ route('home') }}"
                     class="navbar-brand d-flex justify-content-md-start justify-content-center">
                     <img title="{{ siteSetting()->SiteName }}" class="img-fluid img"
-                        src="{{ getImage('site', siteSetting()->SiteLogo) }}" alt="{{ siteSetting()->SiteName }}"
+                        src="{{ getImage(siteSetting()->SiteLogo) }}" alt="{{ siteSetting()->SiteName }}"
                         width="30%" />
                 </a>
             </div>
             <div class="col-md-5 col-12 d-flex m-auto justify-content-end sm-btn-size p-0">
-                <a title="{{ siteSetting()->nav_button_title1 }}" href="{{ siteSetting()->nav_button_link1 }}"
-                    target="_blank" class="btn-primary btn-lg font">{{ siteSetting()->nav_button_title1 }}
+                <a title="{{ siteSetting()->NavButtonTitle1 }}" href="{{ siteSetting()->NavButtonLink1 }}"
+                    target="_blank" class="btn-primary btn-lg font">{{ siteSetting()->NavButtonTitle1 }}
                     <i class="bi bi-chevron-right"></i></a>
-                <a title="{{ siteSetting()->nav_button_title2 }}" href="{{ siteSetting()->nav_button_link2 }}"
-                    target="_blank" class="btn-danger btn-lg font mx-2">{{ siteSetting()->nav_button_title2 }}<i
+                <a title="{{ siteSetting()->NavButtonsTitle2 }}" href="{{ siteSetting()->NavButtonLink2 }}"
+                    target="_blank" class="btn-danger btn-lg font mx-2">{{ siteSetting()->NavButtonsTitle2 }}<i
                         class="bi bi-chevron-right"></i></a>
-                <a title="{{ siteSetting()->nav_button_title3 }}" href="{{ siteSetting()->nav_button_link3 }}"
-                    target="_blank" class="btn-primary btn-lg font">{{ siteSetting()->nav_button_title3 }}
+                <a title="{{ siteSetting()->NavButtontitle3 }}" href="{{ siteSetting()->NavButtonLink3 }}"
+                    target="_blank" class="btn-primary btn-lg font">{{ siteSetting()->NavButtontitle3 }}
                     <i class="bi bi-chevron-right"></i></a>
                 <div class="m-auto mx-2 sub-icon">
 
@@ -236,7 +236,7 @@
                                                                 <div class="mb-2">
                                                                     <a title="Primary Service"
                                                                         class="font-sm button-nav {{ $loop->first ? 'mb-1' : '' }}"
-                                                                        href="{{ route('primaryService', ['slug'=>$service->Slug]) }}">{{ $primary->Title }}<span
+                                                                        href="{{ route('primaryService', ['slug'=>$primary->Slug]) }}">{{ $primary->Title }}<span
                                                                             class="circle-nav"><span
                                                                                 class="arrow-nav"></span></span>
                                                                     </a>

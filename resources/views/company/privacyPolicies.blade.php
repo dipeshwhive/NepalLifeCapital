@@ -20,11 +20,11 @@
                 {{-- <p class="d-flex mb-0 justify-content-start align-content-center font"></p> --}}
                 <h2 class="d-flex justify-content-center fs-4 txt-color align-content-center mb-3 text center">
 
-                    {{ $privacyAndPolicy->title }}
+                    {{ $privacyAndPolicy->Title }}
 
                 </h2>
                 <p class="font-sm text-black-50">
-                    {!! $privacyAndPolicy->description !!}
+                    {!! $privacyAndPolicy->Description !!}
                 </p>
 
             </div>

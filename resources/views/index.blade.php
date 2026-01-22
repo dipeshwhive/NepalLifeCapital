@@ -13,7 +13,7 @@
                                     All</button>
                             </div>
                             <div class="modal-body">
-                                <img title="Modal Image" src="{{ getImage('notification', $notification->FeaturedImage) }}"
+                                <img title="Modal Image" src="{{ getImage($notification->FeaturedImage) }}"
                                     class="w-100" alt="Modal Image" />
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                     @foreach ($sliders as $slider)
                         <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                             <img title="{{ $slider->MainTitle }}" class="w-100"
-                                src="{{ getImage('slider', $slider->FeaturedImage) }}" alt="{{ $slider->MainTitle }}" />
+                                src="{{ getImage($slider->FeaturedImage) }}" alt="{{ $slider->MainTitle }}" />
                             <div class="carousel-caption">
                                 <div class="container-fluid col-9 mb-5">
                                     <div class="row">
@@ -204,14 +204,14 @@
                             <h3 class=" card-title txt-color font-lg">Our
                                 Mission
                             </h3>
-                            <p class="card-text text-black-50 font mt-2">{!! $aboutUs->mission !!}</p>
+                            <p class="card-text text-black-50 font mt-2">{!! $aboutUs->Mission !!}</p>
                         </div>
                     </div>
                     <div class="card mt-3 mb-3 bg-light-pink border-0">
                         <div class="card-body ">
 
                             <h3 class="card-title text-danger font-lg">Our Vision</h3>
-                            <p class="card-text text-black-50 font mt-2">{!! $aboutUs->vision !!}</p>
+                            <p class="card-text text-black-50 font mt-2">{!! $aboutUs->Vision !!}</p>
                         </div>
                     </div>
                     <div class="">
@@ -250,7 +250,7 @@
                                         <h3 class="card-title font-lg" style="color: #064D86;">{{ $service->Title }}
                                         </h3>
                                         <p class="card-text text-black-50 font mt-2">
-                                            {!! Str::limit($service->description, 150) !!}
+                                            {!! Str::limit($service->Description, 150) !!}
                                         </p>
 
                                         <div class="">
@@ -277,7 +277,7 @@
         <!-- Another Section -->
         <section class="container-fluid position-relative mt-3 py-5 m-0 p-0 py-0">
             <img title="{{ siteSetting()->HomeTitle }}"
-                src="{{ getImage('site', siteSetting()->HomeFeaturedImage) }}" width="100%"
+                src="{{ getImage(siteSetting()->HomeFeaturedImage) }}" width="100%"
                 alt="{{ siteSetting()->HomeTitle }}" class="img-fluid mt-5">
             <div class="overlay mt-4 position-absolute text-center low-banner text-white">
                 <h2 class="text-white fs-3">{{ siteSetting()->HomeTitle }}</h2>
@@ -296,10 +296,10 @@
             <div class="row justify-content-center">
                 <div class="col-md-9 div-free-demat text-center topbar rounded-2 text-white">
                     <h2 class="mt-5 text-light fs-3 ">{{ $home2->Title2 }}</h2>
-                    {!! $home2->description2 !!}
+                    {!! $home2->Description2 !!}
                     <div>
                         <button class="button-md mb-4 ">
-                            {{ $home2->route2 }}<span class="circle-md"><span class="arrow-md"></span></span>
+                            {{ $home2->Route2 }}<span class="circle-md"><span class="arrow-md"></span></span>
                         </button>
                     </div>
                 </div>
@@ -333,7 +333,7 @@
                                     <div class="card-body">
                                         <h2 class="card-title fs-3" style="color: #064D86 ;">{{ $loop->iteration }}
                                         </h2>
-                                        <p class="card-text text-black-50 font mt-2">{!! $approach->description !!}
+                                        <p class="card-text text-black-50 font mt-2">{!! $approach->Description !!}
                                         </p>
                                     </div>
                                 </div>
@@ -391,7 +391,7 @@
                                     <h3 class="font fs-5 m-0" style="color: #000;">{{ $feature->Title }}
                                     </h3>
                                     <hr class="my-1">
-                                    <p class="card-texokt text-black-50 font mb-3">{!! $feature->description !!}
+                                    <p class="card-texokt text-black-50 font mb-3">{!! $feature->Description !!}
                                     </p>
                                 </div>
                             @endforeach
@@ -435,7 +435,7 @@
                                             <div class="col-4">
                                                 <div class="img-fluid justify-content-center d-flex">
                                                     <img title="Product Image"
-                                                        src="{{ getImage('products', $product->FeaturedImage) }}"
+                                                        src="{{ getImage($product->FeaturedImage) }}"
                                                         alt="Product Image" class="w-75">
                                                 </div>
                                             </div>
@@ -444,7 +444,7 @@
                                                     {{ $product->Title }}
                                                 </h2>
                                                 <p class="card-text text-black-50 font-sm mt-2">
-                                                    {!! $product->description !!}
+                                                    {!! $product->Description !!}
                                                 </p>
                                             </div>
                                         </div>
@@ -466,7 +466,7 @@
                                         </div>
                                         <div class="row position-relative">
                                             <div class="col-4">
-                                                <p class="text-black-50 font-sm">{{ $product->objectives }}</p>
+                                                <p class="text-black-50 font-sm">{{ $product->Objectives }}</p>
                                             </div>
                                             <div class="col-4">
                                                 <p class="text-black-50 font-sm">{{ $product->MinInvestment }}</p>
@@ -502,7 +502,7 @@
                 <div class="p-3 text-center bg-pink rounded-2">
                     <h2 class="mt-5 fs-4 text-danger">{{ $home4->Title4 }}</h2>
                     <div>
-                        <p class="font text-danger mb-4 text-center">{!! $home4->description4 !!}</p>
+                        <p class="font text-danger mb-4 text-center">{!! $home4->Description4 !!}</p>
                     </div>
                     <div>
                         <a title="PMS" href="{{ route('primaryService', PMS()->Slug) }}"><button
@@ -532,11 +532,11 @@
                             <div class="col-10">
                                 @foreach ($testimonials as $testimonial)
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }} ">
-                                        <p class="font mt-2" style="color: #565F64;">{!! $testimonial->message !!}
+                                        <p class="font mt-2" style="color: #565F64;">{!! $testimonial->Message !!}
                                         </p>
                                         <p class="font mb-0" style="color: #565F64;">{{ $testimonial->name }}
                                         </p>
-                                        <p class="font" style="color: #565F64;">{{ $testimonial->designation }}
+                                        <p class="font" style="color: #565F64;">{{ $testimonial->Designation }}
                                         </p>
                                     </div>
                                 @endforeach
@@ -578,16 +578,16 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="row">
+                    <div class="row">
                         @foreach ($newsletters as $newsletter)
                             <div class="col-md-3 col-sm-12 mb-2">
-                                <h3 class="font fs-5 text-black mb-1">{{ $newsletter->year->year }}
+                                <h3 class="font fs-5 text-black mb-1">{{ $newsletter->years->year}}
                                 </h3>
-                                <a title="Newsletter File" href="{{ getImage('newsletter', $newsletter->file) }}"
-                                    target="_blank" class="card-text text-black-50 font">{{ $newsletter->Title }}</a>
+                                <a title="Newsletter File" href="{{ getNewsletter('assets/pdf/',$newsletter->file) }}"
+                                    target="_blank" class="card-text text-black-50 font">{{ $newsletter->title }}</a>
                             </div>
                         @endforeach
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </section>
@@ -617,7 +617,7 @@
                         <div class="row justify-content-center">
                             <div class="col-md-4 col-auto mb-2">
                                 <img title="Gallery Image"
-                                    src="{{ getImage('gallery', $firstGalleryImage->FeaturedImage) }}" class="w-100"
+                                    src="{{ getImage($firstGalleryImage->FeaturedImage) }}" class="w-100"
                                     alt="
                                     gallery image">
                             </div>
@@ -627,7 +627,7 @@
                                     @foreach ($otherGalleryImage as $image)
                                         <div class="col-md-3 col-auto mb-2">
                                             <img title="Other Gallery"
-                                                src="{{ getImage('gallery', $image->FeaturedImage) }}" class="w-100"
+                                                src="{{ getImage($image->FeaturedImage) }}" class="w-100"
                                                 alt="Otherr Gallery">
                                         </div>
                                     @endforeach

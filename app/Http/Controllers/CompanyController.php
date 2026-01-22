@@ -85,6 +85,7 @@ class CompanyController extends Controller
 
         $photoCategory = GalleryCategory::where('IsActive', 1)
             ->get();
+        
 
         return view('company.photoGallery', compact('photoCategory'));
     }

@@ -3,11 +3,11 @@
             <div class="row">
                 <div class="col-11">
                     <div class="card-body">
-                        <p class="font mb-1">{{ $faq->questions }}
+                        <p class="font mb-1">{{ $faq->Questions }}
                         </p>
                         <div class="content{{ $faq->id }}">
                             <ul class="px-2 mb-1" style="font-size:13px !important;">
-                                {!! $faq->answers !!}
+                                {!! $faq->Answers !!}
                             </ul>
                         </div>
                     </div>
