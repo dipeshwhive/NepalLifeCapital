@@ -330,7 +330,8 @@
                  <div class="container col-11">
                      <div class="row ">
                          <div class="col-md-6 text-white font-md mt-3">
-                             <span>&copy;{{ siteSetting()->FooterText }}</span>
+                             <span>&copy;{!! str_replace('{year}', date('Y'), siteSetting()->FooterText) !!}
+                            </span>
                          </div>
                          <div class="col-md-6 text-md-end mt-3">
                              <div class="ftr-jus font-md">

@@ -12,11 +12,11 @@ class ContactListForm
     {
         return $schema
             ->components([
-                TextInput::make('Name')
+                TextInput::make('name')
                     ->required(),
-                TextInput::make('Email')
+                TextInput::make('email')
                     ->required(),
-                TextInput::make('PhoneNumber')
+                TextInput::make('phone_number')
                     ->required(),
                 RichEditor::make('Message')
                     ->required()

@@ -3,8 +3,6 @@
 namespace App\Filament\Resources\HomePageSetups\Schemas;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -56,8 +54,6 @@ class HomePageSetupForm
                     ->default(null),
                 TextInput::make('Slug4')
                     ->default(null),
-                Toggle::make('Is_active')
-                    ->required(),
             ]);
     }
 }
